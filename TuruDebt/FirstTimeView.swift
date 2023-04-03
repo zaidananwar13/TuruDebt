@@ -97,10 +97,10 @@ struct FirstTimeView: View {
                     .scaleEffect(onTapState ? fifthRing : 0.125)
             }
             .padding(10)
-            .opacity(fadeAwayState ? 0 : 1)
             .animation(.easeInOut, value: 5)
                 
         }
+        .opacity(fadeAwayState ? 0 : 1)
         .onTapGesture {
             onTapState.toggle()
             
@@ -112,7 +112,7 @@ struct FirstTimeView: View {
                 fifthRing = 2.575
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    onTapState = true
+                    fadeAwayState = true
                 }
 
             }
