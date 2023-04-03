@@ -44,8 +44,6 @@ struct FirstTimeView: View {
                 
                 Text("to add New Transaction!")
             }
-            .font(.title2)
-            .fontWeight(.medium)
             
             ZStack {
                 Circle()

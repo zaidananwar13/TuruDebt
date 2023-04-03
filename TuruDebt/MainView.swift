@@ -7,23 +7,6 @@
 
 import SwiftUI
 
-struct MyCircle {
-//    var circle: Circle = Circle()
-//        .fill(Color.blue)
-//        .frame(width: 100.0)
-//        .position(
-//            CGPoint(
-//                x: .random(in: 40...320),
-//                y: .random(in: 90...520)
-//            )
-//        )
-    var i: CGFloat = 0
-    
-    init(indicator: Int) {
-        self.i = CGFloat(indicator)
-    }
-}
-
 struct DataItem: Identifiable {
     var id = UUID()
     var title: String
@@ -197,21 +180,47 @@ struct MainView: View {
     var body: some View {
         
         VStack {
-            Spacer()
-            
-            Text("Navigate Your Debt Transaction Easily")
-                .padding(3)
+            VStack(){
+                HStack {
+                    Text("Navigate Your")
+                    Text("Debt")
+                        .foregroundColor(.pink)
+                    Text("Transaction Easily")
+                }
+                .font(.title3)
                 .fontWeight(.medium)
-            Text("Tap once on the bubble you like to see the nominal, or twice to expand the  detail")
+                .padding(3)
                 
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
+                Spacer()
+                Spacer()
+                
+                HStack {
+                    Text("Tap once")
+                        .foregroundColor(.pink)
+                    Text("on the bubble you like to see the nominal")
+                }
+                .font(.custom("SF Pro Text", size: 15.49))
+                Spacer()
+                
+                HStack {
+                    Text("Tap twice")
+                        .foregroundColor(.pink)
+                    Text("to expand the  detail")
+                }
+                .font(.custom("SF Pro Text", size: 15.49))
+                Spacer()
+            }
+            .frame(height: 100)
+            .fontWeight(.light)
             
             Spacer()
             
-            VStack {
-                BubbleView(data: $data, spacing: 0, startAngle: 180, clockwise: true)
-                    .font(.caption)
+            ZStack(alignment: .center) {
+                Circle()
+                    .stroke(.blue)
+                
+//                BubbleView(data: $data, spacing: 0, startAngle: 180, clockwise: true)
+//                    .font(.caption)
                 
             }
             
