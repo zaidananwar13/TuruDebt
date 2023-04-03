@@ -53,8 +53,8 @@ struct FirstTimeView: View {
                             startPoint: .topLeading, endPoint: .bottomTrailing
                         )
                     )
+                    .opacity(onTapState ? 0.2 : 1)
                     .scaleEffect(onTapState ? firstRing : 1)
-                    .animation(.easeInOut, value: 3)
                 
                 Circle()
                     .fill(
@@ -63,6 +63,7 @@ struct FirstTimeView: View {
                             startPoint: .topLeading, endPoint: .bottomTrailing
                         )
                     )
+                    .opacity(onTapState ? 0.2 : 0.0)
                     .scaleEffect(onTapState ? secondRing : 1)
                 
                 Circle()
@@ -72,9 +73,9 @@ struct FirstTimeView: View {
                             startPoint: .topLeading, endPoint: .bottomTrailing
                         )
                     )
-                    .opacity(onTapState ? 1 : 0.0)
+                    .opacity(onTapState ? 0.4 : 0.0)
                     .scaleEffect(onTapState ? thirdRing : 0.5)
-            
+                
                 Circle()
                     .fill(
                         LinearGradient(
@@ -82,7 +83,7 @@ struct FirstTimeView: View {
                             startPoint: .topLeading, endPoint: .bottomTrailing
                         )
                     )
-                    .opacity(onTapState ? 1 : 0.0)
+                    .opacity(onTapState ? 0.6 : 0.0)
                     .scaleEffect(onTapState ? fourthRing : 0.25)
                 
                 Circle()
@@ -96,22 +97,22 @@ struct FirstTimeView: View {
                     .scaleEffect(onTapState ? fifthRing : 0.125)
             }
             .padding(10)
-            .opacity(fadeAwayState ? 0.1 : 1)
+            .opacity(fadeAwayState ? 0 : 1)
             .animation(.easeInOut, value: 5)
                 
         }
         .onTapGesture {
             onTapState.toggle()
             
-            withAnimation(.easeOut(duration: 2)) {
+            withAnimation(.easeInOut(duration: 1.7)) {
                 firstRing = 6
                 secondRing = 5
                 thirdRing = 4
                 fourthRing = 3
-                fifthRing = 2.3
+                fifthRing = 2.575
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    fadeAwayState = true
+                    onTapState = true
                 }
 
             }
