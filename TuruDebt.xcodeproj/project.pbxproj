@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0654726629DBE13F00A25718 /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654726529DBE13F00A25718 /* NewTransactionView.swift */; };
+		0654726829DBE16300A25718 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654726729DBE16300A25718 /* ContentView.swift */; };
 		8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C337C6429DAB83200227860 /* FirstTimeView.swift */; };
 		8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */; };
 		8CCBFC7129D6AD23006270E5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7029D6AD23006270E5 /* MainView.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0654726529DBE13F00A25718 /* NewTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
+		0654726729DBE16300A25718 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8C337C6429DAB83200227860 /* FirstTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeView.swift; sourceTree = "<group>"; };
 		8CCBFC6B29D6AD23006270E5 /* TuruDebt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuruDebt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuruDebtApp.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 				8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */,
 				8CCBFC7029D6AD23006270E5 /* MainView.swift */,
 				8C337C6429DAB83200227860 /* FirstTimeView.swift */,
+				0654726729DBE16300A25718 /* ContentView.swift */,
+				0654726529DBE13F00A25718 /* NewTransactionView.swift */,
 				8CCBFC7229D6AD24006270E5 /* Assets.xcassets */,
 				8CCBFC7429D6AD24006270E5 /* Preview Content */,
 			);
@@ -141,7 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CCBFC7129D6AD23006270E5 /* MainView.swift in Sources */,
+				0654726829DBE16300A25718 /* ContentView.swift in Sources */,
 				8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */,
+				0654726629DBE13F00A25718 /* NewTransactionView.swift in Sources */,
 				8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
