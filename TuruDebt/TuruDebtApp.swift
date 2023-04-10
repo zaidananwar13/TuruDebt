@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TuruDebtApp: App {
+    
+    let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            FirstTimeView()
+            MainViewEx()
+                .environment(\.managedObjectContext, persistenceController.viewContext)
         }
     }
 }
