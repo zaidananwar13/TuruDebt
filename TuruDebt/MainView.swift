@@ -7,17 +7,11 @@
 
 import SwiftUI
 
-struct DataItem: Identifiable {
-    var id = UUID()
-    var title: String
-    var size: CGFloat
-    var color: Color
-    var offset = CGSize.zero
-}
-
 struct BubbleView: View {
-    
     @Binding var data: [DataItem]
+    
+    @State private var mySize = ViewSize()
+    @State private var offset:CGSize = .zero
     
     // Spacing between bubbles
     var spacing: CGFloat
@@ -28,55 +22,25 @@ struct BubbleView: View {
     // direction
     var clockwise: Bool
     
-    struct ViewSize {
-        var xMin: CGFloat = 0
-        var xMax: CGFloat = 0
-        var yMin: CGFloat = 0
-        var yMax: CGFloat = 0
-    }
-    
-    @State private var mySize = ViewSize()
-    
-    @GestureState var isLongPressed = false
-    @State private var offset:CGSize = .zero
-    
-    
     var body: some View {
-        
-        let longPressedGesture = LongPressGesture()
-            .updating($isLongPressed){
-                newValue, state, transaction in
-                state = newValue
-            }
-        
-        
+         
         let xSize = (mySize.xMax - mySize.xMin) == 0 ? 1 : (mySize.xMax - mySize.xMin)
         let ySize = (mySize.yMax - mySize.yMin) == 0 ? 1 : (mySize.yMax - mySize.yMin)
 
         GeometryReader { geo in
-            
             let xScale = geo.size.width / xSize
             let yScale = geo.size.height / ySize
             let scale = min(xScale, yScale)
-            
-            
-                     
+
             ZStack {
-//                ForEach(data, id: \.id) { item in
-//                    ZStack {
-//                        Circle()
-//                            .frame(width: CGFloat(item.size) * scale,
-//                                   height: CGFloat(item.size) * scale)
-//                            .foregroundColor(item.color)
-//                            .scaleEffect(isLongPressed ? 2 : 1)
-//                            .animation(.default, value: offset)
-//                        Text(item.title)
-//                    }
-//                    .animation(.easeOut, value: 0.3)
-//                    .gesture(longPressedGesture)
-//                    .offset(x: item.offset.width * scale, y: item.offset.height * scale)
-//
-//                }
+                ForEach(data, id: \.id) { item in
+                    ZStack {
+                        Bulet(viewSize: $mySize, item: item, scale: scale)
+                        
+                    }
+                    
+
+                }
             }
             .offset(x: xOffset() * scale, y: yOffset() * scale)
         }
@@ -86,6 +50,32 @@ struct BubbleView: View {
         }
     }
     
+    // calculate max dimensions of offset view
+    func absoluteSize() -> ViewSize {
+        let radius = data[0].size / 2
+        let initialSize = ViewSize(xMin: -radius, xMax: radius, yMin: -radius, yMax: radius)
+        
+        let maxSize = data.reduce(initialSize, { partialResult, item in
+            let xMin = min(
+                partialResult.xMin,
+                item.offset.width - item.size / 2 - spacing
+            )
+            let xMax = max(
+                partialResult.xMax,
+                item.offset.width + item.size / 2 + spacing
+            )
+            let yMin = min(
+                partialResult.yMin,
+                item.offset.height - item.size / 2 - spacing
+            )
+            let yMax = max(
+                partialResult.yMax,
+                item.offset.height + item.size / 2 + spacing
+            )
+            return ViewSize(xMin: xMin, xMax: xMax, yMin: yMin, yMax: yMax)
+        })
+        return maxSize
+    }
     
     // taken out of main for compiler complexity issue
     func xOffset() -> CGFloat {
@@ -99,7 +89,15 @@ struct BubbleView: View {
         let yOffset = mySize.yMin + size / 2
         return -yOffset
     }
-
+    
+    // Calculate alpha from sides - 1. Cosine theorem
+    func calculateAlpha(_ a: CGFloat, _ b: CGFloat, _ c: CGFloat) -> CGFloat {
+        return acos(
+            ( pow(a, 2) - pow(b, 2) - pow(c, 2) )
+            /
+            ( -2 * b * c ) )
+        
+    }
     
     // calculate and set the offsets
     func setOffets() {
@@ -133,98 +131,39 @@ struct BubbleView: View {
             data[i].offset = CGSize(width: x, height: y )
         }
     }
-    
-    // Calculate alpha from sides - 1. Cosine theorem
-    func calculateAlpha(_ a: CGFloat, _ b: CGFloat, _ c: CGFloat) -> CGFloat {
-        return acos(
-            ( pow(a, 2) - pow(b, 2) - pow(c, 2) )
-            /
-            ( -2 * b * c ) )
-        
-    }
-    
-    // calculate max dimensions of offset view
-    func absoluteSize() -> ViewSize {
-        let radius = data[0].size / 2
-        let initialSize = ViewSize(xMin: -radius, xMax: radius, yMin: -radius, yMax: radius)
-        
-        let maxSize = data.reduce(initialSize, { partialResult, item in
-            let xMin = min(
-                partialResult.xMin,
-                item.offset.width - item.size / 2 - spacing
-            )
-            let xMax = max(
-                partialResult.xMax,
-                item.offset.width + item.size / 2 + spacing
-            )
-            let yMin = min(
-                partialResult.yMin,
-                item.offset.height - item.size / 2 - spacing
-            )
-            let yMax = max(
-                partialResult.yMax,
-                item.offset.height + item.size / 2 + spacing
-            )
-            return ViewSize(xMin: xMin, xMax: xMax, yMin: yMin, yMax: yMax)
-        })
-        return maxSize
-    }
-    
 }
+
 
 struct MainView: View {
     @State private var data: [DataItem] = [
-            DataItem(title: "chrome", size: 10, color: .blue),
+            DataItem(title: "Ahmad", size: 180, color: .blue),
+            DataItem(title: "Bagas", size: 60, color: .blue),
+            DataItem(title: "Cika", size: 90, color: .blue),
+            DataItem(title: "Edd", size: 30, color: .blue),
+            DataItem(title: "Florence", size: 50, color: .blue),
+            DataItem(title: "Gugus", size: 120, color: .blue),
+            DataItem(title: "Hijrul", size: 60, color: .blue),
+            DataItem(title: "Ica", size: 90, color: .blue),
+            DataItem(title: "Joko", size: 30, color: .blue),
+            DataItem(title: "Kevin", size: 25, color: .blue)
         ]
     
     var body: some View {
-        
         VStack {
-            VStack(){
-                HStack {
-                    Text("Navigate Your")
-                    Text("Debt")
-                        .foregroundColor(.pink)
-                    Text("Transaction Easily")
-                }
-                .font(.title3)
-                .fontWeight(.medium)
+            
+            Text("Navigate Your Debt Transaction Easily")
                 .padding(3)
-                
-                Spacer()
-                Spacer()
-                
-                HStack {
-                    Text("Tap once")
-                        .foregroundColor(.pink)
-                    Text("on the bubble you like to see the nominal")
-                }
-                .font(.custom("SF Pro Text", size: 15.49))
-                Spacer()
-                
-                HStack {
-                    Text("Tap twice")
-                        .foregroundColor(.pink)
-                    Text("to expand the  detail")
-                }
-                .font(.custom("SF Pro Text", size: 15.49))
-                Spacer()
+                .fontWeight(.medium)
+            Text("Tap once on the bubble you like to see the nominal, or twice to expand the  detail")
+                .fontWeight(.light)
+                .multilineTextAlignment(.center)
+            
+            Spacer(minLength: 100)
+            
+            ZStack {
+                BubbleView(data: $data, spacing: 10, startAngle: 180, clockwise: true)
+                    .font(.caption)
             }
-            .frame(height: 100)
-            .fontWeight(.light)
-            
-            Spacer()
-            
-            ZStack(alignment: .center) {
-                Circle()
-                    .stroke(.blue)
-                
-//                BubbleView(data: $data, spacing: 0, startAngle: 180, clockwise: true)
-//                    .font(.caption)
-                
-            }
-            
-            Spacer()
             
             Text("^")
                 .fontWeight(.black)
@@ -235,8 +174,7 @@ struct MainView: View {
     }
 }
 
-
-struct MainView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
     }
