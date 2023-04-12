@@ -1,11 +1,3 @@
-//
-//  BubblesScene.swift
-//  Example
-//
-//  Created by Neverland on 15.08.15.
-//  Copyright (c) 2015 ProudOfZiggy. All rights reserved.
-//
-
 import SpriteKit
 
 extension CGFloat {
@@ -22,6 +14,8 @@ extension CGFloat {
 class BubblesScene: SIFloatingCollectionScene {
     var bottomOffset: CGFloat = 200
     var topOffset: CGFloat = 0
+    
+    var onTap: ((String) -> Void)?
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -55,6 +49,10 @@ class BubblesScene: SIFloatingCollectionScene {
                     min: frame.size.width + node.frame.size.width,
                     max: frame.size.width + bottomOffset
                 )
+            }
+            
+            if let node = node as? BubbleNode {
+                node.onTap = onTap
             }
             node.position = CGPoint(x: x, y: y)
         }

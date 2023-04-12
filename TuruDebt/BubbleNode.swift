@@ -1,39 +1,35 @@
-//
-//  BubbleNode.swift
-//  Example
-//
-//  Created by Neverland on 15.08.15.
-//  Copyright (c) 2015 ProudOfZiggy. All rights reserved.
-//
-
 import Foundation
-
-import UIKit
 import SpriteKit
 
-class BubbleNode: SIFloatingNode {
+class BubbleNode: SIFloatingNode {    
     var labelNode = SKLabelNode(fontNamed: "")
     
-    class func instantiate() -> BubbleNode {
-        let node = BubbleNode(circleOfRadius: 30)
-        configureNode(node)
+    class func instantiate(data: DataItem) -> BubbleNode {
+        let node = BubbleNode(circleOfRadius: data.size / 2)
+        
+        
+        configureNode(node, data: data)
+        
         return node
     }
     
-    class func configureNode(_ node: BubbleNode) {
+    class func configureNode(_ node: BubbleNode, data: DataItem) {
         let boundingBox = node.path?.boundingBox;
-        let radius = (boundingBox?.size.width)! / 2.0;
-        node.physicsBody = SKPhysicsBody(circleOfRadius: radius + 1.5)
-        node.fillColor = SKColor.black
+        let radius = (boundingBox?.size.width)! / 1.95;
+        
+        node.physicsBody = SKPhysicsBody(circleOfRadius: radius + 0.5)
+        node.fillColor = SKColor.red
         node.strokeColor = node.fillColor
         
-        node.labelNode.text = "Hello"
+        node.data = data
+        node.labelNode.text = data.title
         node.labelNode.position = CGPoint.zero
         node.labelNode.fontColor = SKColor.white
         node.labelNode.fontSize = 10
         node.labelNode.isUserInteractionEnabled = false
         node.labelNode.verticalAlignmentMode = .center
         node.labelNode.horizontalAlignmentMode = .center
+        
         node.addChild(node.labelNode)
     }
     

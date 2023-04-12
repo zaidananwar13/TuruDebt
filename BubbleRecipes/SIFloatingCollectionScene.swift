@@ -1,11 +1,3 @@
-//
-//  SIFloatingCollectionScene.swift
-//  SIFloatingCollectionExample_Swift
-//
-//  Created by Neverland on 15.08.15.
-//  Copyright (c) 2015 ProudOfZiggy. All rights reserved.
-//
-
 import SpriteKit
 
 extension CGPoint {

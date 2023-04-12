@@ -1,11 +1,3 @@
-//
-//  SIFloatingNode.swift
-//  SIFloatingCollectionExample_Swift
-//
-//  Created by Neverland on 15.08.15.
-//  Copyright (c) 2015 ProudOfZiggy. All rights reserved.
-//
-
 import SpriteKit
 
 public enum SIFloatingNodeState {
@@ -15,7 +7,12 @@ public enum SIFloatingNodeState {
 }
 
 open class SIFloatingNode: SKShapeNode {
+    
     private(set) var previousState: SIFloatingNodeState = .normal
+    var data: DataItem?
+    
+    public var onTap: ((String) -> Void)?
+    
     public var state: SIFloatingNodeState = .normal {
         didSet {
             if state != oldValue {
@@ -38,6 +35,9 @@ open class SIFloatingNode: SKShapeNode {
             action = normalizeAnimation()
             actionKey = SIFloatingNode.normalizeKey
         case .selected:
+            if let title = data?.title {
+                onTap?(title)
+            }
             action = selectingAnimation()
             actionKey = SIFloatingNode.selectingKey
         case .removing:
