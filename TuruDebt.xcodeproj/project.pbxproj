@@ -23,6 +23,9 @@
 		8CCBFC7129D6AD23006270E5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7029D6AD23006270E5 /* MainView.swift */; };
 		8CCBFC7329D6AD24006270E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7229D6AD24006270E5 /* Assets.xcassets */; };
 		8CCBFC7629D6AD24006270E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7529D6AD24006270E5 /* Preview Assets.xcassets */; };
+		8CD3E95429E657F600D3C562 /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3E95329E657F600D3C562 /* NewTransactionView.swift */; };
+		8CD3E95629E6581000D3C562 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3E95529E6581000D3C562 /* DetailView.swift */; };
+		8CFA595F29E7744F00C63F33 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA595E29E7744F00C63F33 /* BubbleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		8CCBFC7029D6AD23006270E5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8CCBFC7229D6AD24006270E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CCBFC7529D6AD24006270E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8CD3E95329E657F600D3C562 /* NewTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
+		8CD3E95529E6581000D3C562 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		8CFA595E29E7744F00C63F33 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +108,10 @@
 				8C7195CB29E3A0FB00B9903A /* BubblesScene.swift */,
 				8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */,
 				8CCBFC7029D6AD23006270E5 /* MainView.swift */,
+				8CD3E95529E6581000D3C562 /* DetailView.swift */,
+				8CD3E95329E657F600D3C562 /* NewTransactionView.swift */,
 				8C337C6429DAB83200227860 /* FirstTimeView.swift */,
+				8CFA595E29E7744F00C63F33 /* BubbleView.swift */,
 				8CCBFC7229D6AD24006270E5 /* Assets.xcassets */,
 				8CCBFC7429D6AD24006270E5 /* Preview Content */,
 				8C7195CE29E3A17F00B9903A /* Lorem.swift */,
@@ -191,6 +200,7 @@
 			files = (
 				8C3A297C29DE6D6300126B50 /* HelloSwiftwithGerson.swift in Sources */,
 				8C7195CF29E3A17F00B9903A /* Lorem.swift in Sources */,
+				8CD3E95629E6581000D3C562 /* DetailView.swift in Sources */,
 				8C3A297E29DE74A700126B50 /* SwiftUIViewControl.swift in Sources */,
 				8C7195C929E3A06D00B9903A /* SIFloatingNode.swift in Sources */,
 				8CCBFC7129D6AD23006270E5 /* MainView.swift in Sources */,
@@ -199,8 +209,10 @@
 				8C3A298029DE832400126B50 /* Bulet.swift in Sources */,
 				8C079B1029E412780008A2FF /* ViewController.swift in Sources */,
 				8C7195CD29E3A0FB00B9903A /* BubblesScene.swift in Sources */,
+				8CFA595F29E7744F00C63F33 /* BubbleView.swift in Sources */,
 				8C7195CC29E3A0FB00B9903A /* BubbleNode.swift in Sources */,
 				8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */,
+				8CD3E95429E657F600D3C562 /* NewTransactionView.swift in Sources */,
 				8CBE301629E4FFDE00C736AD /* TestSwitchPage.swift in Sources */,
 				8C3A298229DE84E900126B50 /* BubbleExperiment.swift in Sources */,
 			);

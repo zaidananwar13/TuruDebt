@@ -34,7 +34,7 @@ open class SIFloatingCollectionScene: SKScene {
             modeUpdated()
         }
     }
-    public private(set) var floatingNodes: [SIFloatingNode] = []
+    public var floatingNodes: [SIFloatingNode] = []
     
     private var touchPoint: CGPoint?
     private var touchStartedTime: TimeInterval?
@@ -253,6 +253,17 @@ open class SIFloatingCollectionScene: SKScene {
             configureNode(newNode)
             floatingNodes.append(newNode)
         }
+        
+        super.addChild(node)
+    }
+    
+    open func updateChild(_ node: SKNode, iteration: Int) {
+        super.removeAllChildren()
+        
+        let reeNode = node as? SIFloatingNode
+        configureNode(reeNode)
+        floatingNodes.append(reeNode!)
+
         super.addChild(node)
     }
     
@@ -267,7 +278,7 @@ open class SIFloatingCollectionScene: SKScene {
         addChild(magneticField)
     }
     
-    private func configureNode(_ node: SIFloatingNode!) {
+    func configureNode(_ node: SIFloatingNode!) {
         if node.physicsBody == nil {
             let path = node.path ?? CGMutablePath()
             node.physicsBody = SKPhysicsBody(polygonFrom: path)
