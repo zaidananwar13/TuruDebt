@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+struct DataItem: Identifiable {
+    var id = UUID()
+    var title: String
+    var size: CGFloat
+    var color: Color
+    var offset = CGSize.zero
+}
+
 struct MainView: View {
     @State private var firstTime: Bool = false
     @State private var selectedName: String = ""

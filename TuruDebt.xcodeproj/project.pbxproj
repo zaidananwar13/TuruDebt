@@ -9,16 +9,10 @@
 /* Begin PBXBuildFile section */
 		8C079B1029E412780008A2FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C079B0F29E412780008A2FF /* ViewController.swift */; };
 		8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C337C6429DAB83200227860 /* FirstTimeView.swift */; };
-		8C3A297C29DE6D6300126B50 /* HelloSwiftwithGerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A297B29DE6D6300126B50 /* HelloSwiftwithGerson.swift */; };
-		8C3A297E29DE74A700126B50 /* SwiftUIViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A297D29DE74A700126B50 /* SwiftUIViewControl.swift */; };
-		8C3A298029DE832400126B50 /* Bulet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A297F29DE832400126B50 /* Bulet.swift */; };
-		8C3A298229DE84E900126B50 /* BubbleExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A298129DE84E900126B50 /* BubbleExperiment.swift */; };
 		8C7195C829E3A06D00B9903A /* SIFloatingCollectionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7195C629E3A06D00B9903A /* SIFloatingCollectionScene.swift */; };
 		8C7195C929E3A06D00B9903A /* SIFloatingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7195C729E3A06D00B9903A /* SIFloatingNode.swift */; };
 		8C7195CC29E3A0FB00B9903A /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7195CA29E3A0FB00B9903A /* BubbleNode.swift */; };
 		8C7195CD29E3A0FB00B9903A /* BubblesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7195CB29E3A0FB00B9903A /* BubblesScene.swift */; };
-		8C7195CF29E3A17F00B9903A /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7195CE29E3A17F00B9903A /* Lorem.swift */; };
-		8CBE301629E4FFDE00C736AD /* TestSwitchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE301529E4FFDE00C736AD /* TestSwitchPage.swift */; };
 		8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */; };
 		8CCBFC7129D6AD23006270E5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7029D6AD23006270E5 /* MainView.swift */; };
 		8CCBFC7329D6AD24006270E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7229D6AD24006270E5 /* Assets.xcassets */; };
@@ -31,16 +25,10 @@
 /* Begin PBXFileReference section */
 		8C079B0F29E412780008A2FF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C337C6429DAB83200227860 /* FirstTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeView.swift; sourceTree = "<group>"; };
-		8C3A297B29DE6D6300126B50 /* HelloSwiftwithGerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftwithGerson.swift; sourceTree = "<group>"; };
-		8C3A297D29DE74A700126B50 /* SwiftUIViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewControl.swift; sourceTree = "<group>"; };
-		8C3A297F29DE832400126B50 /* Bulet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulet.swift; sourceTree = "<group>"; };
-		8C3A298129DE84E900126B50 /* BubbleExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleExperiment.swift; sourceTree = "<group>"; };
 		8C7195C629E3A06D00B9903A /* SIFloatingCollectionScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFloatingCollectionScene.swift; sourceTree = "<group>"; };
 		8C7195C729E3A06D00B9903A /* SIFloatingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFloatingNode.swift; sourceTree = "<group>"; };
 		8C7195CA29E3A0FB00B9903A /* BubbleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
 		8C7195CB29E3A0FB00B9903A /* BubblesScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubblesScene.swift; sourceTree = "<group>"; };
-		8C7195CE29E3A17F00B9903A /* Lorem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lorem.swift; sourceTree = "<group>"; };
-		8CBE301529E4FFDE00C736AD /* TestSwitchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwitchPage.swift; sourceTree = "<group>"; };
 		8CCBFC6B29D6AD23006270E5 /* TuruDebt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuruDebt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuruDebtApp.swift; sourceTree = "<group>"; };
 		8CCBFC7029D6AD23006270E5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -62,20 +50,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C7195C429E3A04100B9903A /* exercise */ = {
-			isa = PBXGroup;
-			children = (
-				8C3A297B29DE6D6300126B50 /* HelloSwiftwithGerson.swift */,
-				8C3A297F29DE832400126B50 /* Bulet.swift */,
-				8C3A298129DE84E900126B50 /* BubbleExperiment.swift */,
-				8C3A297D29DE74A700126B50 /* SwiftUIViewControl.swift */,
-			);
-			path = exercise;
-			sourceTree = "<group>";
-		};
 		8C7195C529E3A06D00B9903A /* BubbleRecipes */ = {
 			isa = PBXGroup;
 			children = (
+				8CFA595E29E7744F00C63F33 /* BubbleView.swift */,
+				8C7195CA29E3A0FB00B9903A /* BubbleNode.swift */,
+				8C7195CB29E3A0FB00B9903A /* BubblesScene.swift */,
 				8C7195C629E3A06D00B9903A /* SIFloatingCollectionScene.swift */,
 				8C079B0F29E412780008A2FF /* ViewController.swift */,
 				8C7195C729E3A06D00B9903A /* SIFloatingNode.swift */,
@@ -87,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				8C7195C529E3A06D00B9903A /* BubbleRecipes */,
-				8C7195C429E3A04100B9903A /* exercise */,
 				8CCBFC6D29D6AD23006270E5 /* TuruDebt */,
 				8CCBFC6C29D6AD23006270E5 /* Products */,
 			);
@@ -104,18 +83,13 @@
 		8CCBFC6D29D6AD23006270E5 /* TuruDebt */ = {
 			isa = PBXGroup;
 			children = (
-				8C7195CA29E3A0FB00B9903A /* BubbleNode.swift */,
-				8C7195CB29E3A0FB00B9903A /* BubblesScene.swift */,
 				8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */,
 				8CCBFC7029D6AD23006270E5 /* MainView.swift */,
 				8CD3E95529E6581000D3C562 /* DetailView.swift */,
 				8CD3E95329E657F600D3C562 /* NewTransactionView.swift */,
 				8C337C6429DAB83200227860 /* FirstTimeView.swift */,
-				8CFA595E29E7744F00C63F33 /* BubbleView.swift */,
 				8CCBFC7229D6AD24006270E5 /* Assets.xcassets */,
 				8CCBFC7429D6AD24006270E5 /* Preview Content */,
-				8C7195CE29E3A17F00B9903A /* Lorem.swift */,
-				8CBE301529E4FFDE00C736AD /* TestSwitchPage.swift */,
 			);
 			path = TuruDebt;
 			sourceTree = "<group>";
@@ -198,23 +172,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C3A297C29DE6D6300126B50 /* HelloSwiftwithGerson.swift in Sources */,
-				8C7195CF29E3A17F00B9903A /* Lorem.swift in Sources */,
 				8CD3E95629E6581000D3C562 /* DetailView.swift in Sources */,
-				8C3A297E29DE74A700126B50 /* SwiftUIViewControl.swift in Sources */,
 				8C7195C929E3A06D00B9903A /* SIFloatingNode.swift in Sources */,
 				8CCBFC7129D6AD23006270E5 /* MainView.swift in Sources */,
 				8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */,
 				8C7195C829E3A06D00B9903A /* SIFloatingCollectionScene.swift in Sources */,
-				8C3A298029DE832400126B50 /* Bulet.swift in Sources */,
 				8C079B1029E412780008A2FF /* ViewController.swift in Sources */,
 				8C7195CD29E3A0FB00B9903A /* BubblesScene.swift in Sources */,
 				8CFA595F29E7744F00C63F33 /* BubbleView.swift in Sources */,
 				8C7195CC29E3A0FB00B9903A /* BubbleNode.swift in Sources */,
 				8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */,
 				8CD3E95429E657F600D3C562 /* NewTransactionView.swift in Sources */,
-				8CBE301629E4FFDE00C736AD /* TestSwitchPage.swift in Sources */,
-				8C3A298229DE84E900126B50 /* BubbleExperiment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
