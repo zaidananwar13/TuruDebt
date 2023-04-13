@@ -20,6 +20,12 @@ struct MainViewEx: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 HStack {
+                    Button(action: {
+                    }, label: {
+                        NavigationLink(destination: NewTransactionView()) {
+                             Text("New Transaction")
+                         }
+                    })
                     TextField("Person Name", text: $personName)
                         .textFieldStyle(.roundedBorder)
                     Button(action: addPerson) {
@@ -29,7 +35,7 @@ struct MainViewEx: View {
                 .padding()
                 List {
                     ForEach(persons) { person in
-                        NavigationLink(destination: TransactionView(person: person)) {
+                        NavigationLink(destination: DetailTransactionView(person: person)) {
                             HStack {
                                 Text(person.name ?? "")
                                 Spacer()

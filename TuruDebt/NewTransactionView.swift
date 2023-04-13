@@ -42,7 +42,6 @@ struct NewTransactionView: View {
                         .padding(.bottom,6)
                     Image(systemName: "chevron.down")
                 }
-                .padding(.top,25)
                 .padding(.bottom,25)
                 HStack {
                     Text("Fill")
