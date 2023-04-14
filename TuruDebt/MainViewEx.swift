@@ -10,11 +10,11 @@ import SwiftUI
 struct MainViewEx: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @State private var personName: String = ""
-    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Person.name, ascending: false)], animation: .default)
     private var persons: FetchedResults<Person>
+    
+    @State private var personName: String = ""
     
     var body: some View {
         NavigationStack {
@@ -39,8 +39,8 @@ struct MainViewEx: View {
                             HStack {
                                 Text(person.name ?? "")
                                 Spacer()
-                                Text("Rp. \(Int(totalDebt(transaction: person.transactionsArray))) ,-")
-                                    .foregroundColor(totalDebt(transaction: person.transactionsArray) < 0 ? Color.red : Color.black)
+                                Text("Rp. \(Int(person.totalDebt)) ,-")
+                                    .foregroundColor(person.totalDebt < 0 ? Color.red : Color.black)
                                     .italic()
                             }
                         }
@@ -48,7 +48,7 @@ struct MainViewEx: View {
                     .onDelete(perform: deletePerson)
                 }
             }
-            .navigationTitle("Person")
+//            .navigationTitle("Person")
         }
         
     }
@@ -71,17 +71,9 @@ struct MainViewEx: View {
             PersistenceController.shared.saveContext()
         }
     }
-    
-    func totalDebt(transaction: [Transaction]) -> Double {
-        var debt: Double = 0
-        for item in transaction {
-            debt += item.unwrappedNominal
-        }
-        return debt
-    }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentViews_Previews: PreviewProvider {
     static var previews: some View {
         MainViewEx()
     }

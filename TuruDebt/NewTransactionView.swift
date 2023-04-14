@@ -6,28 +6,29 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct NewTransactionView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) var dismiss
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Person.name, ascending: false)], animation: .default)
+    private var persons: FetchedResults<Person>
+    
     @State private var name: String = ""
     @State private var nominal: String = ""
     @State private var note: String = ""
     @State private var utang = false
     
-    let defaults = UserDefaults.standard
-    
-    
-    func saveNama(name: String){
-        defaults.set(name, forKey: "Nama")
-        
-    }
-    
+    @State var bubbleScene: BubblesScene = BubblesScene()
     
     enum Status: String, CaseIterable, Identifiable {
         case iOweYou, youOweMe
         var id: Self { self }
     }
-    
     @State private var selectedStatus: Status = .iOweYou
+    
+    @State var showExistedNameAlert: Bool = false
     
     let gradientColors = [
         Color(hex: 0xFF7090),
@@ -37,12 +38,13 @@ struct NewTransactionView: View {
     var body: some View {
         VStack {
             VStack{
-                VStack{
-                    Text("Slide to back to Home")
-                        .padding(.bottom,6)
-                    Image(systemName: "chevron.down")
-                }
-                .padding(.bottom,25)
+//                VStack{
+//                    Text("Slide to back to Home")
+//                        .padding(.bottom,6)
+//                    Image(systemName: "chevron.down")
+//                }
+//                .padding(.top,25)
+//                .padding(.bottom,25)
                 HStack {
                     Text("Fill")
                         .font(.title)
@@ -53,6 +55,8 @@ struct NewTransactionView: View {
                         .fontWeight(.semibold)
                 }
                 .padding(.bottom, 30)
+                .padding(.top)
+                
                 HStack{
                     Text("Name")
                         .foregroundColor(.gray)
@@ -62,7 +66,6 @@ struct NewTransactionView: View {
                     "Write your name",
                     text: $name
                 )
-                
                 .frame(height: 41)
                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 .background(Color.white)
@@ -84,8 +87,8 @@ struct NewTransactionView: View {
                 .background(Color.white)
                 .cornerRadius(10)
                 .shadow(color: .gray, radius: 4, x: 2, y: 2)
-                
                 .padding(.bottom, 24.0)
+                .keyboardType(.numberPad)
                 
                 HStack{
                     Text("Note")
@@ -115,26 +118,21 @@ struct NewTransactionView: View {
                 HStack{
                     Picker("Status", selection: $selectedStatus) {
                         Text("I Owe You \(name)").tag(Status.iOweYou)
-                        Text("You Owe Me \(name)").tag(Status.youOweMe)                       
+                        Text("You Owe Me \(name)").tag(Status.youOweMe)
                     }
                     .accentColor(selectedStatus == Status.iOweYou ? Color(hex: 0xFF7090) : Color(hex: 0x8FCBFF))
                     Spacer()
                 }
-                
                 Spacer()
             }
-            
             .padding()
-            Text(defaults.string(forKey: "Nama") ?? "")
-            Spacer(minLength:10)
+            
             Button(action: {
                 print("Clicked")
-                saveNama(name:name)
+                addPerson()
             }, label: {
                 HStack {
-                    
                     Image(systemName: "paperplane.fill")
-                    
                     Text("Save")
                 }
             })
@@ -145,7 +143,66 @@ struct NewTransactionView: View {
             .padding(0)
             .buttonStyle(.bordered)
         }
+        .alert("Name Already Exist.", isPresented: $showExistedNameAlert) {
+            Button("OK", role: .cancel) {}
+        }
     }
+    
+    private func addPerson() {
+        withAnimation {
+            // Search name is already exist or not
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+//            let _ = print("ini request: \(request)")
+            let predicate = NSPredicate(format: "name == %@", name)
+//            let _ = print("ini predicate: \(predicate)")
+            request.predicate = predicate
+            request.fetchLimit = 1
+            
+            do{
+                let count = try viewContext.count(for: request)
+                if(count == 0){
+                    print("no matches")
+                    let newPerson = Person(context:viewContext)
+                    newPerson.id = UUID()
+                    newPerson.name = name
+
+                    let _ = print(newPerson)
+                    
+                    PersistenceController.shared.saveContext()
+                    addTransaction(person: newPerson)
+                }
+                else{
+                    print("match found")
+                    showExistedNameAlert.toggle()
+                    
+                }
+            } catch let error as NSError {
+                print("Could not fetch \(error), \(error.userInfo)")
+            }
+        }
+    }
+    
+    private func addTransaction(person: Person) {
+        withAnimation {
+            
+            let newTransaction = Transaction(context: viewContext)
+            newTransaction.date = Date()
+            newTransaction.note = note
+            if selectedStatus == Status.iOweYou {
+                newTransaction.nominal = 0 - (Double(nominal)!)
+            } else {
+                newTransaction.nominal = Double(nominal)!
+            }
+            person.totalDebt = newTransaction.nominal
+            
+            person.addToTransactions(newTransaction)
+            PersistenceController.shared.saveContext()
+            let _ = print(newTransaction)
+            
+            dismiss()
+        }
+    }
+
 }
 
 struct NewTransactionView_Previews: PreviewProvider {

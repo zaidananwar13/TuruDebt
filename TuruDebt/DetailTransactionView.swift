@@ -119,9 +119,8 @@ struct DetailTransactionView: View {
         }
         .navigationBarHidden(false)
         .sheet(isPresented: $showingAddview) {
-//            AddTransactionView(person: person)
             SettleDebt(person: person)
-                .presentationDetents([.medium])
+                .presentationDetents([.fraction(0.7)])
                 
         }
     }
