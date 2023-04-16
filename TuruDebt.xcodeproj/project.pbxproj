@@ -15,6 +15,9 @@
 		722DF7D029E3C7E400CE7A77 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C729E3C7E400CE7A77 /* Transaction+CoreDataClass.swift */; };
 		722DF7D129E3C7E400CE7A77 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C829E3C7E400CE7A77 /* PersistenceController.swift */; };
 		722DF7D229E3C7E400CE7A77 /* MainViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C929E3C7E400CE7A77 /* MainViewEx.swift */; };
+		729F093D29EC0A9200BE9DA8 /* DynamicFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */; };
+		729F093F29EC0B0D00BE9DA8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F093E29EC0B0D00BE9DA8 /* DetailView.swift */; };
+		729F094129EC5BBE00BE9DA8 /* SettleDebt2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */; };
 		72DA04DB29E7CA1D0071EE7B /* DetailTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */; };
 		72DA04DD29E7CA1D0071EE7B /* SettleDebt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA04DA29E7CA1D0071EE7B /* SettleDebt.swift */; };
 		72DA051F29E815D20071EE7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051929E815D20071EE7B /* ViewController.swift */; };
@@ -40,6 +43,9 @@
 		722DF7C729E3C7E400CE7A77 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		722DF7C829E3C7E400CE7A77 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		722DF7C929E3C7E400CE7A77 /* MainViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewEx.swift; sourceTree = "<group>"; };
+		729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFetchView.swift; sourceTree = "<group>"; };
+		729F093E29EC0B0D00BE9DA8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleDebt2.swift; sourceTree = "<group>"; };
 		72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransactionView.swift; sourceTree = "<group>"; };
 		72DA04DA29E7CA1D0071EE7B /* SettleDebt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettleDebt.swift; sourceTree = "<group>"; };
 		72DA051929E815D20071EE7B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,9 +128,12 @@
 				72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */,
 				72DA04DA29E7CA1D0071EE7B /* SettleDebt.swift */,
 				72DA052729E817E00071EE7B /* AddTransactionView.swift */,
+				729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */,
 				722DF7C129E3C7E400CE7A77 /* DataModel */,
 				8CCBFC7229D6AD24006270E5 /* Assets.xcassets */,
 				8CCBFC7429D6AD24006270E5 /* Preview Content */,
+				729F093E29EC0B0D00BE9DA8 /* DetailView.swift */,
+				729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */,
 			);
 			path = TuruDebt;
 			sourceTree = "<group>";
@@ -209,8 +218,10 @@
 			files = (
 				722DF7CE29E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift in Sources */,
 				722DF7CC29E3C7E400CE7A77 /* Person+CoreDataClass.swift in Sources */,
+				729F093D29EC0A9200BE9DA8 /* DynamicFetchView.swift in Sources */,
 				72DA052029E815D20071EE7B /* BubbleNode.swift in Sources */,
 				72DA052129E815D20071EE7B /* SIFloatingCollectionScene.swift in Sources */,
+				729F093F29EC0B0D00BE9DA8 /* DetailView.swift in Sources */,
 				722DF7CD29E3C7E400CE7A77 /* Person+CoreDataProperties.swift in Sources */,
 				722DF7D029E3C7E400CE7A77 /* Transaction+CoreDataClass.swift in Sources */,
 				72DA04DB29E7CA1D0071EE7B /* DetailTransactionView.swift in Sources */,
@@ -227,6 +238,7 @@
 				72DA052629E8164F0071EE7B /* MainView.swift in Sources */,
 				722DF7D129E3C7E400CE7A77 /* PersistenceController.swift in Sources */,
 				8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */,
+				729F094129EC5BBE00BE9DA8 /* SettleDebt2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

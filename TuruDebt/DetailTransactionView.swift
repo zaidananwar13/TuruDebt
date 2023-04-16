@@ -11,7 +11,6 @@ struct DetailTransactionView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @StateObject var person: Person
-    @State private var transactionNote: String = ""
     @State var showingAddview: Bool = false
     
     var body: some View {
