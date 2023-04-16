@@ -130,6 +130,7 @@ struct NewTransactionView: View {
             Button(action: {
                 print("Clicked")
                 addPerson()
+                
             }, label: {
                 HStack {
                     Image(systemName: "paperplane.fill")
@@ -180,6 +181,7 @@ struct NewTransactionView: View {
                 print("Could not fetch \(error), \(error.userInfo)")
             }
         }
+        
     }
     
     private func addTransaction(person: Person) {
