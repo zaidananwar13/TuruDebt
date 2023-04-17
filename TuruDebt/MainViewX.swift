@@ -15,7 +15,7 @@ struct DataItem: Identifiable {
     var offset = CGSize.zero
 }
 
-struct MainViewX: View {
+struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Person.name, ascending: false)], animation: .default)
@@ -129,7 +129,7 @@ struct MainViewX: View {
     
 }
 
-//struct ContentViewX_Previews: PreviewProvider {
+//struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        MainViewX()
 //    }

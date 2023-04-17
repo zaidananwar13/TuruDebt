@@ -27,7 +27,6 @@
 		72DA052229E815D20071EE7B /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051C29E815D20071EE7B /* BubbleView.swift */; };
 		72DA052329E815D20071EE7B /* SIFloatingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051D29E815D20071EE7B /* SIFloatingNode.swift */; };
 		72DA052429E815D20071EE7B /* BubblesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051E29E815D20071EE7B /* BubblesScene.swift */; };
-		72DA052629E8164F0071EE7B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA052529E8164F0071EE7B /* MainView.swift */; };
 		72DA052829E817E00071EE7B /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA052729E817E00071EE7B /* AddTransactionView.swift */; };
 		8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C337C6429DAB83200227860 /* FirstTimeView.swift */; };
 		8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */; };
@@ -56,7 +55,6 @@
 		72DA051C29E815D20071EE7B /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		72DA051D29E815D20071EE7B /* SIFloatingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFloatingNode.swift; sourceTree = "<group>"; };
 		72DA051E29E815D20071EE7B /* BubblesScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubblesScene.swift; sourceTree = "<group>"; };
-		72DA052529E8164F0071EE7B /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../TuruiDebt2/TuruDebt/MainView.swift; sourceTree = "<group>"; };
 		72DA052729E817E00071EE7B /* AddTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		8C337C6429DAB83200227860 /* FirstTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeView.swift; sourceTree = "<group>"; };
 		8CCBFC6B29D6AD23006270E5 /* TuruDebt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuruDebt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +122,6 @@
 				72DA051829E815D20071EE7B /* BubbleRecipes */,
 				8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */,
 				8C337C6429DAB83200227860 /* FirstTimeView.swift */,
-				72DA052529E8164F0071EE7B /* MainView.swift */,
 				722DF7C929E3C7E400CE7A77 /* MainViewEx.swift */,
 				0654726529DBE13F00A25718 /* NewTransactionView.swift */,
 				72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */,
@@ -239,7 +236,6 @@
 				0654726629DBE13F00A25718 /* NewTransactionView.swift in Sources */,
 				724B241829ED0AE800BF88F3 /* MainViewX.swift in Sources */,
 				72DA052429E815D20071EE7B /* BubblesScene.swift in Sources */,
-				72DA052629E8164F0071EE7B /* MainView.swift in Sources */,
 				722DF7D129E3C7E400CE7A77 /* PersistenceController.swift in Sources */,
 				8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */,
 				729F094129EC5BBE00BE9DA8 /* SettleDebt2.swift in Sources */,

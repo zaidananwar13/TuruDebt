@@ -37,17 +37,21 @@ struct BubbleView: View {
             }
     }
     
-//    func normalizeSize(val, min, max){
-//        return (val - min) / (max - min)
-//    }
+    func normalizeSize(x: Double, min: Double, max:Double) -> Double{
+        print(100 * (x - min) / (max - min))
+        return 100 * ((abs(x) - abs(min)) / (abs(max) - abs(min)))
+    }
     
     // MARK: Update data dari coredata
     // MARK: Masukin datanya ke dalam variable array datas
     func updateBubble() {
+        let maxx = persons.map { $0.totalDebt }.max()
+        let minx = persons.map { $0.totalDebt }.min()
+        
         datas.removeAll()
 
         for person in persons {
-            datas.append(DataItem(title: person.name ?? "no name", size: 81, color: person.totalDebt < 0 ? Color(hex:0xFF7090) : Color(hex:0x8FCBFF)))
+            datas.append(DataItem(title: person.name ?? "no name", size: normalizeSize(x: person.totalDebt, min: minx!, max: maxx!), color: person.totalDebt < 0 ? Color(hex:0xFF7090) : Color(hex:0x8FCBFF)))
         }
         
 //        datas.append(DataItem(title: "Sahmad", size: 81, color: .blue))

@@ -13,7 +13,7 @@ struct TuruDebtApp: App {
     let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            MainViewX()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.viewContext)
         }
     }
