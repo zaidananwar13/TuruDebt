@@ -45,20 +45,21 @@ class BubblesScene: SIFloatingCollectionScene {
         super.addChild(node)
     }
     
-    override func updateChild(_ node: SKNode, iteration: Int) {
-        if(iteration == 0) {
-            floatingNodes = []
-            
-            let count = children.count
-            var childs: [SKNode] = []
-            
-            for i in 0..<count-1 {
-                childs.append(children[i])
+    override func updateChild(_ node: SKNode, iteration: Int, status: Bool = false) {
+        if status {
+            if(iteration == 0) {
+                floatingNodes = []
+                
+                let count = children.count
+                var childs: [SKNode] = []
+                
+                for i in 0..<count {
+                    childs.append(children[i])
+                }
+                
+                self.removeChildren(in: childs)
             }
-            
-            self.removeChildren(in: childs)
         }
-        
         
         if node is BubbleNode {
             var x = CGFloat.random(min: -bottomOffset, max: -node.frame.size.width)
@@ -86,6 +87,7 @@ class BubblesScene: SIFloatingCollectionScene {
         }
         
         super.addChild(node)
+        
     }
     
     fileprivate func configure() {

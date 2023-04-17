@@ -257,7 +257,7 @@ open class SIFloatingCollectionScene: SKScene {
         super.addChild(node)
     }
     
-    open func updateChild(_ node: SKNode, iteration: Int) {
+    open func updateChild(_ node: SKNode, iteration: Int, status: Bool = false) {
         super.removeAllChildren()
         
         let reeNode = node as? SIFloatingNode
