@@ -15,6 +15,7 @@
 		722DF7D029E3C7E400CE7A77 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C729E3C7E400CE7A77 /* Transaction+CoreDataClass.swift */; };
 		722DF7D129E3C7E400CE7A77 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C829E3C7E400CE7A77 /* PersistenceController.swift */; };
 		722DF7D229E3C7E400CE7A77 /* MainViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C929E3C7E400CE7A77 /* MainViewEx.swift */; };
+		724B241829ED0AE800BF88F3 /* MainViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724B241729ED0AE800BF88F3 /* MainViewX.swift */; };
 		729F093D29EC0A9200BE9DA8 /* DynamicFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */; };
 		729F093F29EC0B0D00BE9DA8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F093E29EC0B0D00BE9DA8 /* DetailView.swift */; };
 		729F094129EC5BBE00BE9DA8 /* SettleDebt2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */; };
@@ -43,6 +44,7 @@
 		722DF7C729E3C7E400CE7A77 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		722DF7C829E3C7E400CE7A77 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		722DF7C929E3C7E400CE7A77 /* MainViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewEx.swift; sourceTree = "<group>"; };
+		724B241729ED0AE800BF88F3 /* MainViewX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewX.swift; sourceTree = "<group>"; };
 		729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFetchView.swift; sourceTree = "<group>"; };
 		729F093E29EC0B0D00BE9DA8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleDebt2.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				8CCBFC7429D6AD24006270E5 /* Preview Content */,
 				729F093E29EC0B0D00BE9DA8 /* DetailView.swift */,
 				729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */,
+				724B241729ED0AE800BF88F3 /* MainViewX.swift */,
 			);
 			path = TuruDebt;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				722DF7D229E3C7E400CE7A77 /* MainViewEx.swift in Sources */,
 				8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */,
 				0654726629DBE13F00A25718 /* NewTransactionView.swift in Sources */,
+				724B241829ED0AE800BF88F3 /* MainViewX.swift in Sources */,
 				72DA052429E815D20071EE7B /* BubblesScene.swift in Sources */,
 				72DA052629E8164F0071EE7B /* MainView.swift in Sources */,
 				722DF7D129E3C7E400CE7A77 /* PersistenceController.swift in Sources */,
