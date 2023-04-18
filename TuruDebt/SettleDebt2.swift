@@ -122,6 +122,7 @@ struct SettleDebt2: View {
                             .frame(height:25)
                             .padding(0)
                             .buttonStyle(.bordered)
+                            .disabled(self.nominal.isEmpty)
                             
                             .navigationTitle("Settle Debt")
                             .navigationBarItems(trailing: Button("Dismiss", action: {

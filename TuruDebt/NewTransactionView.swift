@@ -131,6 +131,7 @@ struct NewTransactionView: View {
                 print("Clicked")
                 addPerson()
                 
+                
             }, label: {
                 HStack {
                     Image(systemName: "paperplane.fill")
@@ -143,6 +144,8 @@ struct NewTransactionView: View {
             .frame(height:25)
             .padding(0)
             .buttonStyle(.bordered)
+            .disabled(self.nominal.isEmpty)
+            
         }
         .alert("Name Already Exist.", isPresented: $showExistedNameAlert) {
             Button("OK", role: .cancel) {}
@@ -200,6 +203,8 @@ struct NewTransactionView: View {
             person.addToTransactions(newTransaction)
             PersistenceController.shared.saveContext()
             let _ = print(newTransaction)
+            
+            
             
             dismiss()
         }

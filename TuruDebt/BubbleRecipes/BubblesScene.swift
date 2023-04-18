@@ -12,12 +12,14 @@ extension CGFloat {
 }
 
 class BubblesScene: SIFloatingCollectionScene {
+    
     var bottomOffset: CGFloat = 200
     var topOffset: CGFloat = 0
     
     var onTap: ((String) -> Void)?
     
     override func didMove(to view: SKView) {
+        
         super.didMove(to: view)
         configure()
     }
